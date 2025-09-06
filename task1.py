@@ -1,26 +1,11 @@
-# Task 1: Perform Basic Mathematical Operations
+# Task 1: Check if a Number is Even or Odd
 
-try:
-    # Take two numbers as input
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+# Taking integer input from user
+num = int(input("Enter a number: "))
 
-    # Perform operations
-    addition = num1 + num2
-    subtraction = num1 - num2
-    multiplication = num1 * num2
-
-    # Display results
-    print(f"Addition: {addition}")
-    print(f"Subtraction: {subtraction}")
-    print(f"Multiplication: {multiplication}")
-
-    # Handle division with check for zero
-    if num2 != 0:
-        division = num1 / num2
-        print(f"Division: {division}")
-    else:
-        print("Division: Cannot divide by zero")
-
-except ValueError:
-    print("Invalid input. Please enter valid numbers.")
+# Checking whether even or odd
+if num % 2 == 0:
+    print(f"{num} is an even number.")
+else:
+    print(f"{num} is an odd number.")
+    
