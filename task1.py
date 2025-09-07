@@ -1,20 +1,15 @@
-# factorial_function.py
+# read_file_handle_errors.py
 
-def factorial(n):
-    """Function to calculate factorial using recursion"""
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
+def read_file(filename):
+    """Reads and prints file content line by line"""
+    try:
+        with open(filename, 'r') as file:
+            print("Reading file content:")
+            for line_number, line in enumerate(file, start=1):
+                print(f"Line {line_number}: {line.strip()}")
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found.")
 
 # Main program
 if __name__ == "__main__":
-    try:
-        num = int(input("Enter a number: "))
-        if num < 0:
-            print("Factorial is not defined for negative numbers.")
-        else:
-            result = factorial(num)
-            print(f"Factorial of {num} is: {result}")
-    except ValueError:
-        print("Invalid input! Please enter an integer.")
+    read_file("sample.txt")
