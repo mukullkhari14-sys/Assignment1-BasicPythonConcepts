@@ -1,11 +1,20 @@
-# Task 1: Check if a Number is Even or Odd
+# factorial_function.py
 
-# Taking integer input from user
-num = int(input("Enter a number: "))
+def factorial(n):
+    """Function to calculate factorial using recursion"""
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
-# Checking whether even or odd
-if num % 2 == 0:
-    print(f"{num} is an even number.")
-else:
-    print(f"{num} is an odd number.")
-    
+# Main program
+if __name__ == "__main__":
+    try:
+        num = int(input("Enter a number: "))
+        if num < 0:
+            print("Factorial is not defined for negative numbers.")
+        else:
+            result = factorial(num)
+            print(f"Factorial of {num} is: {result}")
+    except ValueError:
+        print("Invalid input! Please enter an integer.")
