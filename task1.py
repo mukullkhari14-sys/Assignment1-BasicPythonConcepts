@@ -1,15 +1,16 @@
-# read_file_handle_errors.py
+def factorial(n):
+    if n < 0:
+        return "Factorial is not defined for negative numbers"
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
 
-def read_file(filename):
-    """Reads and prints file content line by line"""
-    try:
-        with open(filename, 'r') as file:
-            print("Reading file content:")
-            for line_number, line in enumerate(file, start=1):
-                print(f"Line {line_number}: {line.strip()}")
-    except FileNotFoundError:
-        print(f"Error: The file '{filename}' was not found.")
+# Take input from user
+num = int(input("Enter a number: "))
 
-# Main program
-if __name__ == "__main__":
-    read_file("sample.txt")
+# Call function and print result
+print("Factorial of", num, "is:", factorial(num))
